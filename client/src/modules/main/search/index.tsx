@@ -94,6 +94,7 @@ export const Search = (props: Props) => {
 
   return (
     <AppBar
+      data-testid={'product_search'}
       position='sticky'
       elevation={0}
       sx={{ padding: '10px', backgroundColor: 'white', top: 0 }}
@@ -107,6 +108,9 @@ export const Search = (props: Props) => {
           width: '100%',
         }}
         placeholder='Enter to search'
+        inputProps={{
+          'aria-label': 'product_search_input',
+        }}
         InputProps={{
           endAdornment: (
             <div
@@ -115,7 +119,11 @@ export const Search = (props: Props) => {
                 borderRadius: '5px',
               }}
             >
-              <IconButton aria-label='search' onClick={buttonSearchClick}>
+              <IconButton
+                aria-label='search'
+                onClick={buttonSearchClick}
+                data-testid={'product_search_button'}
+              >
                 <SearchIcon sx={{ color: 'white' }} />
               </IconButton>
             </div>

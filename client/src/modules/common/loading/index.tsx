@@ -14,6 +14,8 @@ export const Loading = (props: Props) => {
         zIndex: (theme) => theme.zIndex.drawer + 1,
       }}
       open={visible}
+      aria-label='app_loading'
+      data-testid='app_loading'
     >
       <CircularProgress sx={{ color: (theme) => theme.palette.primary.main }} />
     </Backdrop>

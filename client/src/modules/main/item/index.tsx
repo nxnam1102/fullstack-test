@@ -12,6 +12,7 @@ export const ProductItem = (props: Props) => {
   const theme = useTheme();
   return (
     <Card
+      data-testid={'product_item'}
       elevation={3}
       onClick={onClick}
       sx={
@@ -27,8 +28,11 @@ export const ProductItem = (props: Props) => {
             }
       }
     >
-      <Typography fontWeight={'bold'}>{item.name}</Typography>
+      <Typography data-testid={'product_item_name'} fontWeight={'bold'}>
+        {item.name}
+      </Typography>
       <Typography
+        data-testid={'product_item_description'}
         textOverflow={'ellipsis'}
         noWrap={type === 'details' ? false : true}
         overflow={'hidden'}
