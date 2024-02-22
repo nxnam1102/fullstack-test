@@ -8,7 +8,10 @@ export interface Props {
 }
 export const Footer = (props: Props) => {
   const { pageIndex, pageSize, total, onPageChange } = props;
-  const totalPages = Math.ceil(parseInt(total) / parseInt(pageSize));
+
+  const totalPages =
+    total && pageSize ? Math.ceil(parseInt(total) / parseInt(pageSize)) : 0;
+  console.log(totalPages, total, pageSize);
   const theme = useTheme();
 
   return (

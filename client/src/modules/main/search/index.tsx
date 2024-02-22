@@ -1,5 +1,5 @@
 import { AppBar, IconButton, TextField, useTheme } from '@mui/material';
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { SearchHistory } from './search_history';
 import SearchIcon from '@mui/icons-material/Search';
 
@@ -14,6 +14,10 @@ export const Search = (props: Props) => {
   const [value, setValue] = useState<string>('');
   const [history, setHistory] = useState<string[]>([]);
   const theme = useTheme();
+
+  useEffect(() => {
+    setValue(searchKey);
+  }, [searchKey]);
 
   const onValueChange: React.ChangeEventHandler<
     HTMLInputElement | HTMLTextAreaElement
@@ -92,7 +96,7 @@ export const Search = (props: Props) => {
     <AppBar
       position='sticky'
       elevation={0}
-      sx={{ padding: '10px', backgroundColor: 'white' }}
+      sx={{ padding: '10px', backgroundColor: 'white', top: 0 }}
     >
       <TextField
         value={value}
