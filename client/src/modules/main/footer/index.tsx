@@ -16,6 +16,7 @@ export const Footer = (props: Props) => {
 
   return (
     <AppBar
+      data-testid={'products_footer'}
       position='sticky'
       elevation={0}
       sx={{ top: 'auto', bottom: 0, zIndex: 10, backgroundColor: 'white' }}

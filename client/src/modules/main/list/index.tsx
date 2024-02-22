@@ -144,6 +144,7 @@ export const ListProduct = () => {
 
   return (
     <Box
+      data-testid={'product_list'}
       sx={{
         boxSizing: 'border-box',
         padding: '0px 50px',

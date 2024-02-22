@@ -24,6 +24,7 @@ export const DetailsProduct = () => {
         justifyContent: 'center',
         display: 'flex',
       }}
+      data-testid={'product_details'}
     >
       <Box sx={{ maxWidth: '1000px' }}>
         <ProductItem data={data} type={'details'} />
